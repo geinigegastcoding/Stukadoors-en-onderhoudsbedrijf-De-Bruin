@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink antialiased;
+}
+
+img,
+svg {
+  display: block;
+}
+
+.section-shell {
+  @apply mx-auto w-[min(1120px,calc(100%-40px))];
+}
+
+@media (max-width: 640px) {
+  .section-shell {
+    @apply w-[min(100%-28px,1120px)];
+  }
+}
+
+.rating-star {
+  clip-path: polygon(50% 0, 62% 35%, 100% 35%, 68% 56%, 80% 100%, 50% 72%, 20% 100%, 32% 56%, 0 35%, 38% 35%);
+}
+
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-soft-rise {
+  animation: soft-rise 0.7s ease-out both;
+}
+
+.image-hover-zoom img {
+  transition: transform 0.6s ease;
+}
+
+.image-hover-zoom:hover img {
+  transform: scale(1.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
