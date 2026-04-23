@@ -21,3 +21,11 @@ Use these build settings:
 - Node.js version: `20`
 
 The site uses `output: "export"` in `next.config.js`, so `next build` creates a static `out/` directory that Cloudflare Pages can publish directly.
+
+If Cloudflare has a deploy command configured, use:
+
+```bash
+npx wrangler deploy
+```
+
+The included `wrangler.jsonc` points Wrangler at the static `out/` directory so it will not try to auto-migrate the project to OpenNext.

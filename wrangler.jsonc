@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stukadoors-en-onderhoudsbedrijf-de-bruin",
+  "compatibility_date": "2026-04-23",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
